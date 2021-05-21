@@ -1,0 +1,37 @@
+%CHEME 5440 Final Exam Problem 4
+clear all;
+close all;
+
+%
+
+
+
+
+%Solve the ODE system and plot output
+x0(1) = 0.0000000001; 
+x0(2) = 0.0000000001;
+tspan = [0.001:.001:100];
+kd = [.01];
+
+%options = odeset('NonNegative',1);
+[t_out,x_out] = ode45(@(t,x) ODE4a(t, x, kd), tspan, x0);
+%semilogx(t_out, x_out)
+plot(t_out, x_out)
+
+
+
+kd = [.01];
+[t_out,x_out1] = ode45(@(t,x) ODE4a(t, x, kd), tspan, x0);
+
+kd = [.1];
+[t_out,x_out2] = ode45(@(t,x) ODE4a(t, x, kd), tspan, x0);
+
+kd = [1];
+[t_out,x_out3] = ode45(@(t,x) ODE4a(t, x, kd), tspan, x0);
+
+kd = [.01];
+[t_out,x_out1] = ode45(@(t,x) ODE4a(t, x, kd), tspan, x0);
+
+
+
+%
